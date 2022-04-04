@@ -66,9 +66,14 @@ public class StatisticsServiceImpl implements StatisticsService {
 	 * @return value of this function for all DataPoints
 	 */
 	protected Double callFunction(String function) {
+		// Send to the KFCQ topic
 		ProducerRecord<String, String> pr = new ProducerRecord<>("KFCQ", function);
+		// Await answer in the KFCReplies topic
 		pr.headers().add(new RecordHeader(KafkaHeaders.REPLY_TOPIC, "KFCReplies".getBytes()));
 		pr.headers().add(new RecordHeader(KafkaHeaders.TOPIC, "KFCQ".getBytes()));
+		// The correlation id does not need to be set manually. This additional metadata will be used to map the result, that is stored in a reply topic,
+		// to the awaiting caller.
+		// Synchronously call Kafka:
 		RequestReplyFuture<String, String, Double> future = 
 				functionCallKafkaTemplate.sendAndReceive(pr);
 		try {

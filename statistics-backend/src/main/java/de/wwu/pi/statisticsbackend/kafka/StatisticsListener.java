@@ -44,7 +44,8 @@ public class StatisticsListener {
 			// Those Kafka listeners that belong to the same groupId will DISJOINTY retrieve the inputs!
 			// That means that no two listeners in the same consumer group will receive the same data.
 			// This can be used to simulate queues.
-			// In the specified scenario, it only makes sense that each listener has a different consumergroup
+			// In the specified scenario, it only makes sense that each instance of the backend defines a different consumergroup
+			// so that backends receive the data point.
 			// Further information from https://kafka.apache.org/documentation/#design_consumerposition :
 			// "Our topic is divided into a set of totally ordered partitions, each of which is consumed by exactly 
 			// one consumer within each subscribing consumer group at any given time.
