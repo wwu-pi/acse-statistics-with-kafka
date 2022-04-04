@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="layout :: head('ACSE Statistics')"></head>
+<body>
+<nav th:replace="layout :: nav('home')"></nav>
+
+<main role="main" class="container">
+    <form class="row rowjustify-content-center" th:action="@{/}" method="post">
+        <div class="form-group row">
+          <label for="x" class="col-sm-4 col-form-label">New data point</label>
+          <div class="col-sm-8">
+            <input type="number" id="x" name="x" class="form-control form-control-lg" placeholder="0.0">
+	        </div>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary btn-lg">Add</button>
+        </div>
+    </form>
+
+
+    <div class="mt-5 row">
+        <h1>Statistics</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"><strong>Average:</strong></div>
+        <div class="col-sm-10" th:text="${average}">Average</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"><strong>Minimum:</strong></div>
+        <div class="col-sm-10" th:text="${minimum}">Minimum</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"><strong>Maximum:</strong></div>
+        <div class="col-sm-10" th:text="${maximum}">Maximum</div>
+    </div>
+</main>
+
+<footer th:replace="layout :: footer"></footer>
+</body>
+</html>
