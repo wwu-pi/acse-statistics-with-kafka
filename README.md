@@ -25,6 +25,7 @@ how queues are mimicked in Kafka via topics and consumer groups with the groupId
 Start a Kafka broker and an instance of Zookeeper. This is, for instance, possible using the provided `docker-compose.yml`.
 To start the broker, open your command line and navigate to the project folder where the `docker-compose.yml` file is located.
 Then, start it via `docker-compose up -d`.
+To stop the docker containers, execute `docker-compose down`.
  
 Then start both projects by navigating into their root folder an then calling:
 
