@@ -61,7 +61,7 @@ public class StatisticsServiceImpl implements StatisticsService {
 	}
 
 	/**
-	 * Retrieves a function value from the backend using synchronous JMS messages.
+	 * Retrieves a function value from the backend using synchronous Kafka messages.
 	 * @param String function to be called. 
 	 * @return value of this function for all DataPoints
 	 */
