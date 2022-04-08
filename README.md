@@ -1,4 +1,4 @@
-# Statistics with message oriented middleware
+# Statistics with Kafka
 
 This repository contains an example that shows how to use Kafka in a Spring application. The application calculates the average, minimum and maximum of numbers which are provided via a web form.
 Conceptually, Kafka is different from MoM in that it employs a pull-based model. While in MoM data is pushed to clients,
