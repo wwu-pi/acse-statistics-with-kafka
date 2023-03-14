@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
-<head th:replace="layout :: head('ACSE Statistics')"></head>
+<head th:replace="~{layout :: head('ACSE Statistics')}"></head>
 <body>
-<nav th:replace="layout :: nav('home')"></nav>
+<nav th:replace="~{layout :: nav('home')}"></nav>
 
 <main role="main" class="container">
     <form class="row rowjustify-content-center" th:action="@{/}" method="post">
@@ -37,6 +37,6 @@
     </div>
 </main>
 
-<footer th:replace="layout :: footer"></footer>
+<footer th:replace="~{layout :: footer}"></footer>
 </body>
 </html>
